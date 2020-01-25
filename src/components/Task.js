@@ -7,7 +7,10 @@ const Container = styled.div`
   padding: 8px;
   margin-bottom: 8px;
   border-radius: 5px;
-  background-color: white;
+  background-color: #f8dadb;
+  color: #363636;
+  font-size: 1.1rem;
+  border: none;
 `;
 class Task extends React.Component {
   render() {
