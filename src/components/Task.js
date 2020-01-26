@@ -7,7 +7,7 @@ const Container = styled.div`
   padding: 8px;
   margin-bottom: 8px;
   border-radius: 5px;
-  background-color: #f8dadb;
+  background-color: ${props => (props.isDragging ? "pink" : "#f8dadb")};
   color: #363636;
   font-size: 1.1rem;
   border: none;
@@ -16,11 +16,12 @@ class Task extends React.Component {
   render() {
     return (
       <Draggable draggableId={this.props.task.id} index={this.props.index}>
-        {provided => (
+        {(provided, snapshot) => (
           <Container
             {...provided.draggableProps}
             {...provided.dragHandleProps}
             ref={provided.innerRef}
+            isDragging={snapshot.isDragging}
           >
             {this.props.task.content}
           </Container>
