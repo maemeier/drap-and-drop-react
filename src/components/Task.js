@@ -11,7 +11,9 @@ const Container = styled.div`
   color: #363636;
   font-size: 1.1rem;
   border: none;
+  display: flex;
 `;
+
 class Task extends React.Component {
   render() {
     return (
